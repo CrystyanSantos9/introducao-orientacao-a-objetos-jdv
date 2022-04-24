@@ -5,14 +5,8 @@ import java.util.List;
 
 import constantes.StatusAluno;
 
-public class Aluno {
-	private String nome;
-	int idade;
-	private String dataNascimento;
-	private String registroGeral;
-	private String numeroCpf;
-	private String nomeMae;
-	private String nomPai;
+public class Aluno extends Pessoa {
+	
 	private String dataMatricula;
 	private String nomeEscola;
 	private String serieMatriculado;
@@ -50,6 +44,31 @@ public class Aluno {
 		return somaNotas / disciplinas.size();
 	}
 
+	
+
+	public String getDataMatricula() {
+		return dataMatricula;
+	}
+
+	public void setDataMatricula(String dataMatricula) {
+		this.dataMatricula = dataMatricula;
+	}
+
+	public String getNomeEscola() {
+		return nomeEscola;
+	}
+
+	public void setNomeEscola(String nomeEscola) {
+		this.nomeEscola = nomeEscola;
+	}
+
+	public String getSerieMatriculado() {
+		return serieMatriculado;
+	}
+
+	public void setSerieMatriculado(String serieMatriculado) {
+		this.serieMatriculado = serieMatriculado;
+	}
 
 	public String isAprovado() {
 		double media = this.getMediaNota();
@@ -77,13 +96,15 @@ public class Aluno {
 	
 
 	
+	
+
 
 	@Override
 	public String toString() {
-		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", registroGeral="
-				+ registroGeral + ", numeroCpf=" + numeroCpf + ", nomeMae=" + nomeMae + ", nomPai=" + nomPai
-				+ ", dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola + ", serieMatriculado="
-				+ serieMatriculado + "]";
+		return "Aluno [dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola + ", serieMatriculado="
+				+ serieMatriculado + ", disciplinas=" + disciplinas + ", nome=" + nome + ", idade=" + idade
+				+ ", dataNascimento=" + dataNascimento + ", registroGeral=" + registroGeral + ", numeroCpf=" + numeroCpf
+				+ ", nomeMae=" + nomeMae + ", nomPai=" + nomPai + "]";
 	}
 
 	@Override
@@ -119,6 +140,21 @@ public class Aluno {
 
 	
 	
+	@Override
+	public boolean pessoaMaiorIdadade() {
+		// TODO Auto-generated method stub
+		return idade >= 21;
+	}
+	
+	public String msgMaiorDeIdade() {
+		return this.pessoaMaiorIdadade() ? "Aluno é maior de idade." : "Aluno é menor de idade.";
+	}
+
+	@Override
+	public double Salario() {
+		// TODO Auto-generated method stub
+		return 700;
+	}
 	
 	
 }
